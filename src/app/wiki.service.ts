@@ -9,6 +9,7 @@ export class WikiService {
 
   constructor(private database: AngularFireDatabase) {
     this.characters = database.list('Characters');
+    this.characters.subscribe(res => console.log(res));
   }
 
   getCharacters() {
