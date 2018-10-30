@@ -15,6 +15,32 @@ export class WikiService {
     this.movies.subscribe(res => console.log(res));
   }
 
+  getMovieByKey(movieKey: string) {
+    const keyArray = movieKey.split('_');
+    for (let i = 0; i < keyArray.length; i++) {
+      if (keyArray[i] == 'and' || keyArray[i] == 'the' || keyArray[i] == 'of') {
+        keyArray[i] = keyArray[i];
+      } else {
+        keyArray[i] = keyArray[i][0].toUpperCase() + keyArray[i].substr(1);
+      }
+    }
+    const key = keyArray.join(' ');
+    return this.database.object('movies/' + key);
+  }
+
+  getCharacterByKey(characterKey: string) {
+    const keyArray = characterKey.split('_');
+    for (let i = 0; i < keyArray.length; i++) {
+      if (keyArray[i] == 'and' || keyArray[i] == 'the' || keyArray[i] == 'of') {
+        keyArray[i] = keyArray[i];
+      } else {
+        keyArray[i] = keyArray[i][0].toUpperCase() + keyArray[i].substr(1);
+      }
+    }
+    const key = keyArray.join(' ');
+    return this.database.object('characters/' + key);
+  }
+
   getCharacters() {
     return this.characters;
   }
