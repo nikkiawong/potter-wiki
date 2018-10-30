@@ -10,11 +10,11 @@ const appRoutes: Routes = [
     component: WelcomeComponent
   },
   {
-    path: 'characters',
+    path: 'characters/:$key',
     component: CharactersComponent
   },
   {
-    path: 'movies',
+    path: 'movies/:$key',
     component: MoviesComponent
   }
 ];
