@@ -1,20 +1,31 @@
 <div class="header-background">
-  <div class="header">
-    <!-- <h2>{{name}}</h2>  -->
-    <!--character name-->
+  <div *ngFor="let character of characters | async" class="header">
+    <h2>{{character.$key}}</h2>
   </div>
 </div>
-<div class="main-content">
-  <div class="summary">
-    <!--character summary populates here-->
+<div class="main-content" *ngFor="let character of characters | async">
+  <div *ngFor="let film of character.charMovies" class="summary">
+    <div *ngIf="film">
+      <h4>Movie Specific Summary</h4>
+      <div *ngFor="let summary of film.movieSpecificSummary">
+        <p>{{summary}}</p>
+      </div>
+      <h4>Movie Specific Spoiler Summary</h4>
+      <div *ngFor="let summary of film.movieSpecificSpoilerSummary">
+        <p>{{summary}}</p>
+      </div>
+    </div>
   </div>
-  <div class="profile">
-    <!-- <h4>{{name}}</h4>
-    <p><span class="bold">Date of Birth:</span> {{birthdate}}</p>
-    <p><span class="bold">House:</span> {{house}}</p>
-    <p><span class="bold">Family:</span> {{family}}</p>
-    <p><span class="bold">First Appearance:</span> <span class="italic">{{firstAppearance}}</span></p>
-    <p><span class="bold">Last Appearance:</span> <span class="italic">{{lastAppearance}}</span></p>
-    <p>Portrayed By {{portrayedBy}}</p> -->
+  <div class="profile" *ngFor="let film of character.charMovies">
+    <div *ngIf="film">
+      <img src="{{film.photo}}" alt="">
+        <h4>{{film.name}}</h4>
+        <p><span class="bold">Date of Birth:</span> {{film.birthdate}}</p>
+        <p><span class="bold">House:</span> {{film.house}}</p>
+        <p><span class="bold">Family:</span> {{film.family}}</p>
+        <p><span class="bold">First Appearance:</span> <span class="italic">{{film.firstAppearance}}</span></p>
+        <p><span class="bold">Last Appearance:</span> <span class="italic">{{lastAppearance}}</span></p>
+        <p>Portrayed by {{film.portrayedBy}}</p>
+    </div>
   </div>
 </div>
