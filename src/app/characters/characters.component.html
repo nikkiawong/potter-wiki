@@ -7,9 +7,13 @@
   <div *ngFor="let film of character.charMovies" class="summary">
     <div *ngIf="film">
       <h4>Movie Specific Summary</h4>
-      <p>{{film.movieSpecificSummary}}</p>
+      <div *ngFor="let summary of film.movieSpecificSummary">
+        <p>{{summary}}</p>
+      </div>
       <h4>Movie Specific Spoiler Summary</h4>
-      <p>{{film.movieSpecificSpoilerSummary}}</p>
+      <div *ngFor="let summary of film.movieSpecificSpoilerSummary">
+        <p>{{summary}}</p>
+      </div>
     </div>
   </div>
   <div class="profile" *ngFor="let film of character.charMovies">
