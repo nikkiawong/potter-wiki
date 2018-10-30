@@ -8,7 +8,7 @@ export class WikiService {
   characters: FirebaseListObservable<any[]>;
 
   constructor(private database: AngularFireDatabase) {
-    this.characters = database.list('Characters');
+    this.characters = database.list('characters');
     this.characters.subscribe(res => console.log(res));
   }
 

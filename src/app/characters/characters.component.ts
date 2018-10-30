@@ -20,5 +20,4 @@ export class CharactersComponent implements OnInit {
     this.characters = this.database.getCharacters();
     this.characters.subscribe(res => console.log(res));
   }
-
 }
