@@ -12,10 +12,10 @@
       <p>{{film.movieSpecificSpoilerSummary}}</p>
     </div>
   </div>
-  <h4>{{character.$key}}</h4>
   <div class="profile" *ngFor="let film of character.charMovies">
     <div *ngIf="film">
       <img src="{{film.photo}}" alt="">
+        <h4>{{film.name}}</h4>
         <p><span class="bold">Date of Birth:</span> {{film.birthdate}}</p>
         <p><span class="bold">House:</span> {{film.house}}</p>
         <p><span class="bold">Family:</span> {{film.family}}</p>
