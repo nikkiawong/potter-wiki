@@ -10,8 +10,11 @@
 </select>
 <div class="main-content">
   <div class="summary">
-    <p>Summary goes here</p>
-    <p *ngFor="let paragraph of charMovieToDisplay?.movieSpecificSummary">{{paragraph}}</p>
+    <h4>Movie Specific Summary</h4>
+    <div *ngFor="let paragraph of charMovieToDisplay?.movieSpecificSummary">
+      <p>{{paragraph}}</p>
+    </div>
+    <h4>Movie Specific Spoiler Summary</h4>
     <p *ngFor="let paragraph of charMovieToDisplay?.movieSpecificSpoilerSummary">{{paragraph}}</p>
   </div>
   <div class="profile">

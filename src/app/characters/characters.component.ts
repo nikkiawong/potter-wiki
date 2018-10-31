@@ -38,7 +38,8 @@ export class CharactersComponent implements OnInit {
 
    this.wikiService.getCharMovieById(this.characterKey, this.charMovieId).subscribe(dataLastEmittedFromObserver => {
      console.log(dataLastEmittedFromObserver);
-     this.charMovieToDisplay = new Character(dataLastEmittedFromObserver.name, dataLastEmittedFromObserver.birthdate, dataLastEmittedFromObserver.firstAppearance, dataLastEmittedFromObserver.lastAppearance, dataLastEmittedFromObserver.portrayedBy, dataLastEmittedFromObserver.house, dataLastEmittedFromObserver.family, dataLastEmittedFromObserver.loveInterest, dataLastEmittedFromObserver.movie, dataLastEmittedFromObserver.summary, dataLastEmittedFromObserver.spoilerSummary);
+     this.charMovieToDisplay = new Character(dataLastEmittedFromObserver.name, dataLastEmittedFromObserver.birthdate, dataLastEmittedFromObserver.firstAppearance, dataLastEmittedFromObserver.lastAppearance, dataLastEmittedFromObserver.portrayedBy, dataLastEmittedFromObserver.house, dataLastEmittedFromObserver.family, dataLastEmittedFromObserver.loveInterest, dataLastEmittedFromObserver.movie, dataLastEmittedFromObserver.movieSpecificSummary, dataLastEmittedFromObserver.movieSpecificSpoilerSummary,
+     dataLastEmittedFromObserver.photo);
 
      console.log(this.charMovieToDisplay);
    })
@@ -51,7 +52,8 @@ export class CharactersComponent implements OnInit {
     // console.log(optionFromMenu); logging correctly
     this.wikiService.getCharMovieById(this.characterKey, optionFromMenu).subscribe(dataLastEmittedFromObserver => {
       console.log(dataLastEmittedFromObserver);
-      this.charMovieToDisplay = new Character(dataLastEmittedFromObserver.name, dataLastEmittedFromObserver.birthdate, dataLastEmittedFromObserver.firstAppearance, dataLastEmittedFromObserver.lastAppearance, dataLastEmittedFromObserver.portrayedBy, dataLastEmittedFromObserver.house, dataLastEmittedFromObserver.family, dataLastEmittedFromObserver.loveInterest, dataLastEmittedFromObserver.movie, dataLastEmittedFromObserver.summary, dataLastEmittedFromObserver.spoilerSummary);
+      this.charMovieToDisplay = new Character(dataLastEmittedFromObserver.name, dataLastEmittedFromObserver.birthdate, dataLastEmittedFromObserver.firstAppearance, dataLastEmittedFromObserver.lastAppearance, dataLastEmittedFromObserver.portrayedBy, dataLastEmittedFromObserver.house, dataLastEmittedFromObserver.family, dataLastEmittedFromObserver.loveInterest, dataLastEmittedFromObserver.movie, dataLastEmittedFromObserver.movieSpecificSummary, dataLastEmittedFromObserver.movieSpecificSpoilerSummary,
+      dataLastEmittedFromObserver.photo);
 
       console.log(this.charMovieToDisplay);
     })
