@@ -49,7 +49,8 @@ export class WikiService {
     return this.movies;
   }
   addCharacter(newCharacter: Character) {
-    this.characters.push(newCharacter);
+    // this.characters.push(newCharacter);
+  this.database.object(`/characters/${newCharacter.name}/charMovies/${newCharacter.movie}/`).set(newCharacter);
   }
 
 }
