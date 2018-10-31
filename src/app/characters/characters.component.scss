@@ -1,7 +1,4 @@
-body, html {
-  margin: 0;
-  padding: 0;
-}
+@import "../../styles.scss";
 
 .bold {
   font-weight: bold;
@@ -20,7 +17,7 @@ body, html {
   margin: 0;
   padding: 0;
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 1%;
 }
 
 .header {
@@ -36,20 +33,21 @@ body, html {
 .main-content {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  width: 60%;
+  justify-content: space-between;
+  width: 90%;
+  max-width: $contentWidth;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 15%;
 }
 
 .summary {
-  margin-right: 10px;
-  width: 60%;
+  margin-right: 5%;
+  // width: 60%;
 }
 
 .profile {
-  width: 200px;
+  width: 30%;
   img {
     width: 100%;
   }
