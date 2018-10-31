@@ -29,6 +29,17 @@
   z-index: 999;
   flex-direction: row-reverse;
   align-items: center;
+  input[type="text"] {
+    border: 0;
+    outline: none;
+    background-color : $darkBlue;
+    font-size: 16px;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    &::placeholder {
+      color: white;
+    }
+  }
   @include topBars;
   input {
     align-items: center;
@@ -36,7 +47,8 @@
     justify-content: center;
     right: 30px;
     height: 30px;
-    width: 40px;
+    width: 50px;
+    transition: all 0.3s cubic-bezier(0,0,.20,0.6);
     &:focus {
       outline: none;
       width: 30vw;
