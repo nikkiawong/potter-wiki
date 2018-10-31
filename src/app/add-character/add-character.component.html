@@ -29,11 +29,13 @@
   <input #newCharacterMovie>
   <br>
   <label>Summary:</label>
-  <textarea #newCharacterSummary></textarea>
+  <textarea #newCharacterMovieSpecificSummary></textarea>
   <br>
   <label>Spoiler Summary:</label>
-  <textarea #newCharacterSpoilerSummary></textarea>
+  <textarea #newCharacterMovieSpecificSpoilerSummary></textarea>
   <br>
-  <button (click)="submitForm(newCharacterName.value, newCharacterBirthdate.value, newCharacterFirstAppearance.value, newCharacterLastAppearance.value, newCharacterPortryedBy.value, newCharacterHouse.value, newCharacterFamily.value, newCharacterLoveInterest.value, newCharacterMovie.value, newCharacterSummary.value, newCharacterSpoilerSummary.value); newCharacterName.value=''; newCharacterBirthdate.value=''; newCharacterFirstAppearance.value=''; newCharacterLastAppearance.value=''; newCharacterPortryedBy.value=''; newCharacterHouse.value=''; newCharacterFamily.value=''; newCharacterLoveInterest.value=''; newCharacterMovie.value=''; newCharacterSummary.value=''; newCharacterSpoilerSummary.value='';">Add</button>
+  <label>Photos:</label>
+  <input #newCharacterPhoto>
+  <button (click)="submitForm(newCharacterName.value, newCharacterBirthdate.value, newCharacterFirstAppearance.value, newCharacterLastAppearance.value, newCharacterPortryedBy.value, newCharacterHouse.value, newCharacterFamily.value, newCharacterLoveInterest.value, newCharacterMovie.value, newCharacterMovieSpecificSummary.value, newCharacterMovieSpecificSpoilerSummary.value, newCharacterPhoto.value); newCharacterName.value=''; newCharacterBirthdate.value=''; newCharacterFirstAppearance.value=''; newCharacterLastAppearance.value=''; newCharacterPortryedBy.value=''; newCharacterHouse.value=''; newCharacterFamily.value=''; newCharacterLoveInterest.value=''; newCharacterMovie.value=''; newCharacterMovieSpecificSummary.value=''; newCharacterMovieSpecificSpoilerSummary.value='';newCharacterPhoto.value='';">Add</button>
 
 </div>
