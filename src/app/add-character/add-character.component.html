@@ -1,0 +1,39 @@
+<div class="container">
+
+  <h2>Add Character</h2>
+  <label>Character Name:</label>
+  <input #newCharacterName>
+  <br>
+  <label>Birthdate:</label>
+  <input #newCharacterBirthdate>
+  <br>
+  <label>First Appearance:</label>
+  <input #newCharacterFirstAppearance>
+  <br>
+  <label>Last Appearance:</label>
+  <input #newCharacterLastAppearance>
+  <br>
+  <label>Portrayed By:</label>
+  <input #newCharacterPortryedBy>
+  <br>
+  <label>House:</label>
+  <input #newCharacterHouse>
+  <br>
+  <label>Family:</label>
+  <input #newCharacterFamily>
+  <br>
+  <label>Love Interest:</label>
+  <input #newCharacterLoveInterest>
+  <br>
+  <label>Movie:</label>
+  <input #newCharacterMovie>
+  <br>
+  <label>Summary:</label>
+  <textarea #newCharacterSummary></textarea>
+  <br>
+  <label>Spoiler Summary:</label>
+  <textarea #newCharacterSpoilerSummary></textarea>
+  <br>
+  <button (click)="submitForm(newCharacterName.value, newCharacterBirthdate.value, newCharacterFirstAppearance.value, newCharacterLastAppearance.value, newCharacterPortryedBy.value, newCharacterHouse.value, newCharacterFamily.value, newCharacterLoveInterest.value, newCharacterMovie.value, newCharacterSummary.value, newCharacterSpoilerSummary.value); newCharacterName.value=''; newCharacterBirthdate.value=''; newCharacterFirstAppearance.value=''; newCharacterLastAppearance.value=''; newCharacterPortryedBy.value=''; newCharacterHouse.value=''; newCharacterFamily.value=''; newCharacterLoveInterest.value=''; newCharacterMovie.value=''; newCharacterSummary.value=''; newCharacterSpoilerSummary.value='';">Add</button>
+
+</div>

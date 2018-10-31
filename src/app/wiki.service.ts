@@ -48,5 +48,8 @@ export class WikiService {
   getMovies() {
     return this.movies;
   }
+  addCharacter(newCharacter: Character) {
+    this.characters.push(newCharacter);
+  }
 
 }
