@@ -46,6 +46,8 @@ body, html {
 .summary {
   margin-right: 10px;
   width: 60%;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile {

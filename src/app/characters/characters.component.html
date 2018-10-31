@@ -1,6 +1,6 @@
 <div class="header-background">
-  <div *ngFor="let character of characters | async" class="header">
-    <h2>{{character.$key}}</h2>
+  <div class="header">
+    <h2>{{characterToShow.$key}}</h2>
   </div>
 </div>
 <select (change)="onChange($event.target.value)">
@@ -8,22 +8,23 @@
   <option value="2">2</option>
   <option value="3">3</option>
 </select>
-<div class="main-content" *ngFor="let character of characters | async">
-  <div *ngFor="let film of character.charMovies" class="summary">
+<div class="main-content">
+  <p>{{charMovieToDisplay?.house}}</p>
+  <!-- <div *ngFor="let film of characterToShow?.charMovies" class="summary">
     <div *ngIf="film">
       <h4>Movie Specific Summary</h4>
-      <div *ngFor="let summary of film.movieSpecificSummary | movie:filterByMovie">
+      <div *ngFor="let summary of film.movieSpecificSummary">
         <p>{{summary}}</p>
       </div>
       <h4>Movie Specific Spoiler Summary</h4>
-      <div *ngFor="let summary of film.movieSpecificSpoilerSummary | movie:filterByMovie">
+      <div *ngFor="let summary of film.movieSpecificSpoilerSummary">
         <p>{{summary}}</p>
       </div>
     </div>
   </div>
-  <div class="profile" *ngFor="let film of character.charMovies">
+  <div class="profile" *ngFor="let film of characterToShow.charMovies">
     <div *ngIf="film">
-      <img src="{{film.photo}}" alt="">
+        <img src="{{film.photo}}" alt="">
         <h4>{{film.name}}</h4>
         <p><span class="bold">Date of Birth:</span> {{film.birthdate}}</p>
         <p><span class="bold">House:</span> {{film.house}}</p>
@@ -32,5 +33,5 @@
         <p><span class="bold">Last Appearance:</span> <span class="italic">{{lastAppearance}}</span></p>
         <p>Portrayed by {{film.portrayedBy}}</p>
     </div>
-  </div>
+  </div> -->
 </div>
