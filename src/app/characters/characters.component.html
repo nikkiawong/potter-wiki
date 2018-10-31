@@ -13,12 +13,15 @@
 </div>
 <div class="main-content">
   <div class="summary">
-    <h4>Movie Specific Summary</h4>
     <div *ngFor="let paragraph of charMovieToDisplay?.movieSpecificSummary">
       <p>{{paragraph}}</p>
     </div>
-    <h4>Movie Specific Spoiler Summary</h4>
-    <p *ngFor="let paragraph of charMovieToDisplay?.movieSpecificSpoilerSummary">{{paragraph}}</p>
+    <button (click)="toggle()" type="button" name="button">Spoilers On/Off</button>
+    <div *ngFor="let paragraph of charMovieToDisplay?.movieSpecificSpoilerSummary">
+      <div *ngIf="show">
+        <p>{{paragraph}}</p>
+      </div>
+    </div>
   </div>
   <div class="profile">
     <img src="{{charMovieToDisplay?.photo}}" alt="">

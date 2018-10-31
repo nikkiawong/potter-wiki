@@ -48,6 +48,8 @@ export class CharactersComponent implements OnInit {
 
   selectedFilm: number;
 
+  public show:boolean = false;
+
   onChange(optionFromMenu) {
     // console.log(optionFromMenu); logging correctly
     this.wikiService.getCharMovieById(this.characterKey, optionFromMenu).subscribe(dataLastEmittedFromObserver => {
@@ -57,6 +59,12 @@ export class CharactersComponent implements OnInit {
 
       console.log(this.charMovieToDisplay);
     })
+
+    this.show = false;
+  }
+
+  toggle() {
+    this.show = !this.show;
   }
 
 }
