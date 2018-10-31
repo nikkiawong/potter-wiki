@@ -13,10 +13,12 @@ import { Character } from '../models/character.model';
   providers: [WikiService]
 })
 export class CharactersComponent implements OnInit {
+  charMovieId: string;
+  charMovieToDisplay: Character;
 
   characters: FirebaseListObservable<any[]>;
 
-  constructor(private route: ActivatedRoute, private location: Location, private database: WikiService) { }
+  constructor(private route: ActivatedRoute, private location: Location, private database: WikiService, private wikiService: WikiService) { }
   characterKey: string;
   characterToShow;
 
@@ -34,10 +36,16 @@ export class CharactersComponent implements OnInit {
 
   }
 
-  filterByMovie: string = "1";
+  selectedFilm: number;
 
   onChange(optionFromMenu) {
-    this.filterByMovie = optionFromMenu;
+    // console.log(optionFromMenu); logging correctly
+    this.wikiService.getCharMovieById(this.characterKey, optionFromMenu).subscribe(dataLastEmittedFromObserver => {
+      console.log(dataLastEmittedFromObserver);
+      this.charMovieToDisplay = new Character(dataLastEmittedFromObserver.name, dataLastEmittedFromObserver.birthdate, dataLastEmittedFromObserver.firstAppearance, dataLastEmittedFromObserver.lastAppearance, dataLastEmittedFromObserver.portrayedBy, dataLastEmittedFromObserver.house, dataLastEmittedFromObserver.family, dataLastEmittedFromObserver.loveInterest, dataLastEmittedFromObserver.movie, dataLastEmittedFromObserver.summary, dataLastEmittedFromObserver.spoilerSummary);
+
+      console.log(this.charMovieToDisplay);
+    })
   }
 
 }

@@ -42,8 +42,10 @@
 }
 
 .summary {
-  margin-right: 5%;
-  // width: 60%;
+margin-right: 5%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile {
