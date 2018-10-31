@@ -52,9 +52,6 @@ export class WikiService {
     }
     const key = keyArray.join(' ');
     console.log('characters/' + key + '/' + 'charMovies/' + charMovieId);
-    this.database.object('/characters/' + key + '/charMovies/1').subscribe(dataLastEmittedFromObserver => {
-      console.log(dataLastEmittedFromObserver);
-    })
     return this.database.object('/characters/' + key + '/charMovies/' + charMovieId);
   }
 

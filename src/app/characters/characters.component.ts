@@ -35,6 +35,15 @@ export class CharactersComponent implements OnInit {
      console.log(this.characterToShow);
    })
 
+   this.charMovieId = '1';
+
+   this.wikiService.getCharMovieById(this.characterKey, this.charMovieId).subscribe(dataLastEmittedFromObserver => {
+     console.log(dataLastEmittedFromObserver);
+     this.charMovieToDisplay = new Character(dataLastEmittedFromObserver.name, dataLastEmittedFromObserver.birthdate, dataLastEmittedFromObserver.firstAppearance, dataLastEmittedFromObserver.lastAppearance, dataLastEmittedFromObserver.portrayedBy, dataLastEmittedFromObserver.house, dataLastEmittedFromObserver.family, dataLastEmittedFromObserver.loveInterest, dataLastEmittedFromObserver.movie, dataLastEmittedFromObserver.summary, dataLastEmittedFromObserver.spoilerSummary);
+
+     console.log(this.charMovieToDisplay);
+   })
+
   }
 
   selectedFilm: number;
