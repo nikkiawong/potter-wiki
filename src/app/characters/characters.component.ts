@@ -34,4 +34,11 @@ export class CharactersComponent implements OnInit {
    })
 
   }
+
+  filterByMovie: string = "1";
+
+  onChange(optionFromMenu) {
+    this.filterByMovie = optionFromMenu;
+  }
+
 }

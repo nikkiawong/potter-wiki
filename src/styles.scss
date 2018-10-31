@@ -1,6 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+$yellow: #DCC48E;
+$lightGreen: #E2E5D3;
+$green: #B3C0A4; //might be an O not 0
+$blue: #505168;
+$darkBlue: #27233A;
+
 html, body {
   margin: 0;
   font-family: 'Source Sans Pro', sans-serif;
   display: inline-block;
+  background-color: $lightGreen;
 }

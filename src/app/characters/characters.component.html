@@ -3,15 +3,20 @@
     <h2>{{character.$key}}</h2>
   </div>
 </div>
+<select (change)="onChange($event.target.value)">
+  <option value="1" selected="selected">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+</select>
 <div class="main-content" *ngFor="let character of characters | async">
   <div *ngFor="let film of character.charMovies" class="summary">
     <div *ngIf="film">
       <h4>Movie Specific Summary</h4>
-      <div *ngFor="let summary of film.movieSpecificSummary">
+      <div *ngFor="let summary of film.movieSpecificSummary | movie:filterByMovie">
         <p>{{summary}}</p>
       </div>
       <h4>Movie Specific Spoiler Summary</h4>
-      <div *ngFor="let summary of film.movieSpecificSpoilerSummary">
+      <div *ngFor="let summary of film.movieSpecificSpoilerSummary | movie:filterByMovie">
         <p>{{summary}}</p>
       </div>
     </div>
