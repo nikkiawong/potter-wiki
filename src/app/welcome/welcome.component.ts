@@ -21,11 +21,13 @@ export class WelcomeComponent implements OnInit {
   }
 
   goToCharacter(character) {
-    this.router.navigate(['characters', character.$key])
+    const url = character.$key.toLowerCase().split(" ").join('_');
+    this.router.navigate(['characters', url])
   }
 
   goToMovie(movie) {
-    this.router.navigate(['movies', movie.$key])
+    const url = movie.$key.toLowerCase().split(" ").join('_');
+    this.router.navigate(['movies', url])
   }
 
 }
