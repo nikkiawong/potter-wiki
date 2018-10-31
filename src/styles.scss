@@ -3,10 +3,35 @@ $lightGreen: #E2E5D3;
 $green: #B3C0A4; //might be an O not 0
 $blue: #505168;
 $darkBlue: #27233A;
+$contentWidth: 1200px;
 
 html, body {
-  margin: 0;
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
   font-family: 'Source Sans Pro', sans-serif;
   display: inline-block;
   background-color: $lightGreen;
+}
+
+body {
+  width: 100%;
+  display: block;
+  // margin-left: auto;
+  // margin-right: auto;
+}
+
+app-navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 3px solid $blue;
+  background-color: $darkBlue;
+}
+
+router-outlet {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
