@@ -3,11 +3,14 @@
     <h2>{{characterToShow.$key}}</h2>
   </div>
 </div>
-<select (change)="onChange($event.target.value)">
-  <option value="1" selected="selected">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-</select>
+<div class="select-movie">
+  <p>Which movie are you on?</p>
+  <select (change)="onChange($event.target.value)">
+    <option value="1" selected="selected">Harry Potter and the Sorceror's Stone (#1)</option>
+    <option value="2">Harry Potter and the Chamber of Secrets (#2)</option>
+    <option value="3">Harry Potter and the Prisoner of Azkaban (#3)</option>
+  </select>
+</div>
 <div class="main-content">
   <div class="summary">
     <h4>Movie Specific Summary</h4>

@@ -58,3 +58,14 @@ margin-right: 5%;
 h4 {
   text-align: center;
 }
+
+.select-movie {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 31%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3%;
+}
