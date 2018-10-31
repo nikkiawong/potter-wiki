@@ -34,6 +34,9 @@
     </ul>
     <p><span class="bold">First Appearance:</span> <span class="italic">{{charMovieToDisplay?.firstAppearance}}</span></p>
     <p><span class="bold">Last Appearance:</span> <span class="italic">{{lastAppearance}}</span></p>
-    <p>Portrayed by {{charMovieToDisplay?.portrayedBy}}</p>
+    <p><span class="bold">Portrayed By:</span></p>
+    <ul *ngFor="let actor of charMovieToDisplay?.portrayedBy">
+      <li>{{actor}}</li>
+    </ul>
   </div>
 </div>
