@@ -1,25 +1,21 @@
-$yellow: #DCC48E;
-$lightGreen: #E2E5D3;
-$green: #B3C0A4; //might be an O not 0
-$blue: #505168;
-$darkBlue: #27233A;
+@import "../../styles.scss";
 
 @mixin topBars {
   top: 0;
   right: 0;
   left: 0;
   width: 100%;
+  max-width: $contentWidth;
   height: 175px;
 }
 
 .navbar {
-  background-color: $darkBlue;
   display: flex;
-  position: absolute;
+  position: relative;
   @include topBars;
   align-items: center;
   justify-content: center;
-  border-bottom: 3px solid $blue;
+
   img {
     display: block;
     margin-left: auto;
