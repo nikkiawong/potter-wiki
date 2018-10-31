@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { routing } from './app.routing';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { MoviePipe } from './movie.pipe';
 
 import { masterFirebaseConfig } from './api-keys';
 import { AppComponent } from './app.component';
@@ -26,7 +27,8 @@ export const firebaseConfig = {
     MoviesComponent,
     CharactersComponent,
     WelcomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    MoviePipe
   ],
   imports: [
     BrowserModule,

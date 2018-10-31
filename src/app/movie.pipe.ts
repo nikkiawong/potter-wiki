@@ -13,28 +13,28 @@ export class MoviePipe implements PipeTransform {
 
   transform(input: Character[], movieDesired) {
     let output: Character[] = [];
-    if (movieDesired === 1) {
+    if (movieDesired === "1") {
       // seen sorcerer's stone
       for (var i=0; i < input.length; i++) {
-        if(input[i].charMovies.$key <= 1) {
+        if(input[i].movie === 1) {
           // push all content up to end of movie 1
           output.push(input[i]);
         }
       }
       return output;
-    } else if (movieDesired === 2) {
+    } else if (movieDesired === "2") {
       // seen chamber of secrets
       for (var i=0; i < input.length; i++) {
-        if(input[i].movieNumber <= 2) {
+        if(input[i].movie <= 2) {
           // push all content up to end of movie 2
           output.push(input[i]);
         }
       }
       return output;
-    } else if (movieDesired === 3) {
+    } else if (movieDesired === "3") {
       // seen prisoner of azkaban
       for (var i=0; i < input.length; i++) {
-        if (input[i].movieNumber <= 3) {
+        if (input[i].movie <= 3) {
           // push all content up to end of movie 3
           output.push(input[i]);
         }
@@ -47,3 +47,7 @@ export class MoviePipe implements PipeTransform {
     }
   }
 }
+
+//figure out what input[i] is exactly
+
+// replace $key with a new property labelling movie
