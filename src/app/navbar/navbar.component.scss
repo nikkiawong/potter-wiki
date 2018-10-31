@@ -15,7 +15,7 @@ $darkBlue: #27233A;
 .navbar {
   background-color: $darkBlue;
   display: flex;
-  position: absolute;
+  position: relative;
   @include topBars;
   align-items: center;
   justify-content: center;
