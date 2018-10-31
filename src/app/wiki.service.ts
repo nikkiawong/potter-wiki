@@ -41,6 +41,20 @@ export class WikiService {
     return this.database.object('characters/' + key);
   }
 
+  getCharMovieById(characterKey: string, charMovieId: string) {
+    const keyArray = characterKey.split('_');
+    for (let i = 0; i < keyArray.length; i++) {
+      if (keyArray[i] == 'and' || keyArray[i] == 'the' || keyArray[i] == 'of') {
+        keyArray[i] = keyArray[i];
+      } else {
+        keyArray[i] = keyArray[i][0].toUpperCase() + keyArray[i].substr(1);
+      }
+    }
+    const key = keyArray.join(' ');
+    console.log('characters/' + key + '/' + 'charMovies/' + charMovieId);
+    return this.database.object('/characters/' + key + '/charMovies/' + charMovieId);
+  }
+
   getCharacters() {
     return this.characters;
   }

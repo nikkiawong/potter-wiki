@@ -1,7 +1,4 @@
-body, html {
-  margin: 0;
-  padding: 0;
-}
+@import "../../styles.scss";
 
 .bold {
   font-weight: bold;
@@ -12,7 +9,7 @@ body, html {
 }
 
 .header-background {
-  background-image: url(https://images.pottermore.com/bxd3o8b291gf/2phT56DSucuUqU6Icm6mCe/b1fd2811691e41ffd1622a07eb528604/HogwartsCastle_WB_F4_HogwartsThroughTheTrees_Illust_100615_Land.jpg?w=1200);
+  background-image: url(../../assets/img/hogwarts-bg3.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -20,7 +17,7 @@ body, html {
   margin: 0;
   padding: 0;
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 1%;
 }
 
 .header {
@@ -37,19 +34,22 @@ body, html {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 60%;
+  width: 72%;
+  max-width: $contentWidth;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 15%;
 }
 
 .summary {
-  margin-right: 10px;
+margin-right: 2%;
   width: 60%;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile {
-  width: 200px;
+  width: 27%;
   img {
     width: 100%;
   }
@@ -57,4 +57,15 @@ body, html {
 
 h4 {
   text-align: center;
+}
+
+.select-movie {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 31%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3%;
 }

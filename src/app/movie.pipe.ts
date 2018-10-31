@@ -16,8 +16,8 @@ export class MoviePipe implements PipeTransform {
     if (movieDesired === "1") {
       // seen sorcerer's stone
       for (var i=0; i < input.length; i++) {
+        console.log(input[i]);
         if(input[i].movie === 1) {
-          // push all content up to end of movie 1
           output.push(input[i]);
         }
       }

@@ -1,9 +1,15 @@
-body, html {
-  margin: 0;
-  padding: 0;
+@import "../../styles.scss";
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .header-background {
+  background-image: url(../../assets/img/hogwarts-bg.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -11,7 +17,7 @@ body, html {
   margin: 0;
   padding: 0;
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 1%;
 }
 
 .header {
@@ -24,21 +30,32 @@ body, html {
   font-size: 30px;
 }
 
-.main {
+.main-content {
   display: flex;
   flex-direction: row;
-  width: 60%;
   justify-content: space-around;
+  width: 72%;
+  max-width: $contentWidth;
+  margin-top: 70px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 15%;
 }
 
 .summary {
-  margin-right: 70px;
+margin-right: 2%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
 }
 
-img {
-  width: 100%;
-  height: auto;
+.profile {
+  width: 27%;
+  img {
+    width: 100%;
+  }
+}
+
+h4 {
+  text-align: center;
 }

@@ -1,6 +1,40 @@
-<div class="main-content">
+<!-- <div class="main-content">
   <div class="summary">
     <h2>{{movieToShow?.releaseDate}}</h2>
     <p>Movie Component Works!</p>
+
+    <div class="traileriFrame">
+      <iframe width="560" height="315" src={{movieToShow?.trailerUrl}} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+  </div>
+</div> -->
+
+
+<div class="header-background">
+  <div class="header">
+    <h2>{{movieToShow?.title}}</h2>
+    </div>
+</div>
+<div class="main-content">
+  <div class="summary">
+    <div>
+      <h4>Movie Specific Summary</h4>
+      <div *ngFor="let paragraph of movieToShow?.summary">
+        <p>{{paragraph}}</p>
+      </div>
+      <h4>Movie Specific Spoiler Summary</h4>
+      <div *ngFor="let paragraph of movieToShow?.spoilerSummary">
+        <p>{{paragraph}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="profile">
+      <img src="{{movieToShow?.coverPhoto}}" alt="">
+        <h4>{{movieToShow?.title}}</h4>
+        <p><span class="bold">Release Date:</span> {{movieToShow?.releaseDate}}</p>
+        <p><span class="bold">Director:</span> {{movieToShow?.director}}</p>
+        <p><span class="bold">Length:</span> {{movieToShow?.length}}</p>
+        <p><span class="bold">Website:</span> {{movieToShow?.link}}</p>
   </div>
 </div>

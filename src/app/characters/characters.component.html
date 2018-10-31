@@ -1,36 +1,42 @@
 <div class="header-background">
-  <div *ngFor="let character of characters | async" class="header">
-    <h2>{{character.$key}}</h2>
+  <div class="header">
+    <h2>{{characterToShow.$key}}</h2>
   </div>
 </div>
-<select (change)="onChange($event.target.value)">
-  <option value="1" selected="selected">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-</select>
-<div class="main-content" *ngFor="let character of characters | async">
-  <div *ngFor="let film of character.charMovies" class="summary">
-    <div *ngIf="film">
-      <h4>Movie Specific Summary</h4>
-      <div *ngFor="let summary of film.movieSpecificSummary | movie:filterByMovie">
-        <p>{{summary}}</p>
-      </div>
-      <h4>Movie Specific Spoiler Summary</h4>
-      <div *ngFor="let summary of film.movieSpecificSpoilerSummary | movie:filterByMovie">
-        <p>{{summary}}</p>
+<div class="select-movie">
+  <p>Which movie are you on?</p>
+  <select (change)="onChange($event.target.value)">
+    <option value="1" selected="selected">Harry Potter and the Sorceror's Stone (#1)</option>
+    <option value="2">Harry Potter and the Chamber of Secrets (#2)</option>
+    <option value="3">Harry Potter and the Prisoner of Azkaban (#3)</option>
+  </select>
+</div>
+<div class="main-content">
+  <div class="summary">
+    <div *ngFor="let paragraph of charMovieToDisplay?.movieSpecificSummary">
+      <p>{{paragraph}}</p>
+    </div>
+    <button (click)="toggle()" type="button" name="button">Spoilers On/Off</button>
+    <div *ngFor="let paragraph of charMovieToDisplay?.movieSpecificSpoilerSummary">
+      <div *ngIf="show">
+        <p>{{paragraph}}</p>
       </div>
     </div>
   </div>
-  <div class="profile" *ngFor="let film of character.charMovies">
-    <div *ngIf="film">
-      <img src="{{film.photo}}" alt="">
-        <h4>{{film.name}}</h4>
-        <p><span class="bold">Date of Birth:</span> {{film.birthdate}}</p>
-        <p><span class="bold">House:</span> {{film.house}}</p>
-        <p><span class="bold">Family:</span> {{film.family}}</p>
-        <p><span class="bold">First Appearance:</span> <span class="italic">{{film.firstAppearance}}</span></p>
-        <p><span class="bold">Last Appearance:</span> <span class="italic">{{lastAppearance}}</span></p>
-        <p>Portrayed by {{film.portrayedBy}}</p>
-    </div>
+  <div class="profile">
+    <img src="{{charMovieToDisplay?.photo}}" alt="">
+    <h4>{{charMovieToDisplay?.name}}</h4>
+    <p><span class="bold">Date of Birth:</span> {{charMovieToDisplay?.birthdate}}</p>
+    <p><span class="bold">House:</span> {{charMovieToDisplay?.house}}</p>
+    <p><span class="bold">Family:</span></p>
+    <ul *ngFor="let relative of charMovieToDisplay?.family">
+      <li>{{relative}}</li>
+    </ul>
+    <p><span class="bold">First Appearance:</span> <span class="italic">{{charMovieToDisplay?.firstAppearance}}</span></p>
+    <p><span class="bold">Last Appearance:</span> <span class="italic">{{lastAppearance}}</span></p>
+    <p><span class="bold">Portrayed By:</span></p>
+    <ul *ngFor="let actor of charMovieToDisplay?.portrayedBy">
+      <li>{{actor}}</li>
+    </ul>
   </div>
 </div>
