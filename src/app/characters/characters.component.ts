@@ -22,7 +22,6 @@ export class CharactersComponent implements OnInit {
 
   ngOnInit() {
     this.characters = this.database.getCharacters();
-
     this.characters.subscribe(res => console.log(res));
 
     this.route.params.forEach((urlParameters) => {
