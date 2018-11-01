@@ -13,6 +13,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { CharactersComponent } from './characters/characters.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AddCharacterComponent } from './add-character/add-character.component';
 import { AdminComponent } from './admin/admin.component';
 import { EditorComponent } from './editor/editor.component';
 
@@ -31,6 +32,7 @@ export const firebaseConfig = {
     WelcomeComponent,
     NavbarComponent,
     MoviePipe,
+    AddCharacterComponent,
     AdminComponent,
     EditorComponent
   ],
