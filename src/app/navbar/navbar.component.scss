@@ -11,6 +11,7 @@
 
 .navbar {
   display: flex;
+  position: relative;
   @include topBars;
   flex-direction: row;
   align-items: center;
@@ -35,6 +36,12 @@
   flex-direction: row-reverse;
   align-items: center;
   input[type="text"] {
+    align-items: center;
+    margin-right: 30px;
+    right: 30px;
+    height: 30px;
+    width: 50px;
+    transition: all 0.3s cubic-bezier(0,0,.20,0.6);
     border: 0;
     outline: none;
     background-color : $darkBlue;
@@ -45,20 +52,11 @@
     &::placeholder {
       color: white;
     }
-  }
-  @include topBars;
-  input {
-    align-items: center;
-    margin-right: 30px;
-    right: 30px;
-    height: 30px;
-    width: 50px;
-    transition: all 0.3s cubic-bezier(0,0,.20,0.6);
     &:focus {
       outline: none;
       border-bottom: 1px solid white;
       width: 20vw;
-      z-index: 1000;
     }
   }
+  @include topBars;
 }
