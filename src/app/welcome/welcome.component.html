@@ -13,13 +13,15 @@
         <div class="links" *ngFor="let character of characters | async"  (click)="goToCharacter(character)">
           <p>{{character.$key}}</p>
         </div>
-        <button (click)="addCharacter = true">Add Character</button>
       </div>
     </div>
 
     <app-add-character *ngIf="addCharacter"></app-add-character>
   </div>
-  <div class="adminButton">
-    <a routerLink="admin">Admin View</a>
+  <div class="buttons">
+    <div class="adminButton">
+      <a routerLink="admin">Admin View</a>
+    </div>
+    <button id="addCharButton" (click)="addCharacter = true">Add Character</button>
   </div>
 </div>
