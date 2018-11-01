@@ -1,17 +1,24 @@
 <h2>Admin</h2>
 
 <div *ngFor="let character of characters | async">
-    <h3>Key:{{charcter.$key}}</h3>
-    <h3>{{character.name}}</h3>
-    <h3>birthdate:{{character.birthdate}}</h3>
-    <h3>{{character.firstAppearance}}</h3>
-    <h3>{{character.lastAppearance}}</h3>
-    <h3>{{character.portrayedBy}}</h3>
-    <h3>{{character.house}}</h3>
-    <h3>{{character.family}}</h3>
-    <h3>{{character.loveInterest}}</h3>
-    <h3>{{character.movie}}</h3>
-    <h3>{{character.movieSpecificSummary}}</h3>
-    <h3>{{character.movieSpecificSpoilerSummary}}</h3>
-    <h3>{{character.photo}}</h3>
+    <h1>Character:  {{character.$key}}</h1>
+    <div *ngFor="let entry of character.charMovies?.slice(1)">
+      <h2>Movie Number: {{entry?.movie}}</h2>
+      <h3>Name: {{entry?.name}}</h3>
+      <h3>Birthdate: {{entry?.birthdate}}</h3>
+      <h3>First Appearance: {{entry?.firstAppearance}}</h3>
+      <h3>Last Appearance: {{entry?.lastAppearance}}</h3>
+      <h3>Portrayed By: {{entry?.portrayedBy}}</h3>
+      <h3>House: {{entry?.house}}</h3>
+      <h3>Family: {{entry?.family}}</h3>
+      <h3>Love Interest: {{entry?.loveInterest}}</h3>
+      <h3>Summary: {{entry?.movieSpecificSummary}}</h3>
+      <h3>Spoiler Summary: {{entry?.movieSpecificSpoilerSummary}}</h3>
+      <h3>Photo URL: {{entry?.photo}}</h3>
+      <br>
+      <br>
+    </div>
+    <br>
+    <br>
+
   </div>
