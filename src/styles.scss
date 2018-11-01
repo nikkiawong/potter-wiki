@@ -30,6 +30,9 @@ body {
     background-color: $darkBlue;
     color: white;
   }
+  &:focus {
+    outline: none;
+  }
 }
 
 app-navbar {
