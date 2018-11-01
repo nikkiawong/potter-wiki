@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 welcome-background {
   position: relative;
+=======
+.welcome-background {
+>>>>>>> 29b6f60c91c7c91b968ded452d0551ed66b06878
   background-image: url(../../assets/img/hogwarts-fog.jpg);
   background-size: cover;
   background-position: center;
@@ -8,9 +12,7 @@ welcome-background {
 }
 
 .welcome-body {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  padding-top: 70px;
 }
 
 .links {
@@ -24,7 +26,7 @@ welcome-background {
 
 h1 {
   text-align: center;
-  margin-top: 70px;
+  margin-top: 0;
 }
 
 .link-body {

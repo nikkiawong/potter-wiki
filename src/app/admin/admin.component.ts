@@ -26,7 +26,7 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
     this.characters = this.database.getCharacters();
     this.movies = this.database.getMovies();
-    console.log(character.$key);
+    this.characters.subscribe(res => console.log(res[0]));
     // this.characters.subscribe(res => console.log(res));
 
   }
