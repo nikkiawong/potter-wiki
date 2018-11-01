@@ -1,0 +1,36 @@
+.welcome-background {
+  position: relative;
+  background-image: url(../../assets/img/hogwarts-fog.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+.welcome-body {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.links {
+  color: #505168;
+  transition: all 0.3s cubic-bezier(0,0,.25,1);
+  &:hover {
+    cursor: pointer;
+    color: #27233A;
+  }
+}
+
+h1 {
+  text-align: center;
+  margin-top: 70px;
+}
+
+.link-body {
+  text-align: center;
+}
+
+.category {
+  margin-bottom: 30px;
+}
