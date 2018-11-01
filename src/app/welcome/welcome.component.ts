@@ -29,5 +29,6 @@ export class WelcomeComponent implements OnInit {
     const url = movie.$key.toLowerCase().split(" ").join('_');
     this.router.navigate(['movies', url])
   }
+  public addChar = false;
 
 }
