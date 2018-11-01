@@ -53,6 +53,14 @@ margin-right: 2%;
   img {
     width: 100%;
   }
+  h3 {
+    text-transform: uppercase;
+  }
+}
+
+h2 {
+  font-family: 'Sacramento', cursive;
+  font-size: 70px;
 }
 
 h3 {
@@ -84,7 +92,7 @@ button {
   transition: all 0.3s cubic-bezier(0,0,.20,0.6);
   border-radius: 5px;
   font: {
-    family: 'Source Sans Pro', sans-serif;
+    family: 'Dosis', sans-serif;
     size: 16px;
     weight: bold;
   }
