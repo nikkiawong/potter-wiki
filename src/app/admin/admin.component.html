@@ -1,26 +1,31 @@
-<h2>Admin</h2>
+<div class="container-bg">
+  <div class="container">
+    <h2 id="title">Admin</h2>
+    <div *ngFor="let character of characters | async">
+      <div class="character-card">
+        <h1>Character:  {{character.$key}}</h1>
+        <div *ngFor="let entry of character.charMovies?.slice(1)">
+          <h2>Movie Number: {{entry?.movie}}</h2>
+          <button (click)="toggle()" type="button" name="button" class="{{entry?.name}} {{entry?.movie}}">Show/Hide Edit Form</button>
+          <div *ngIf="show">
+            <app-editor [selectedCharacter]="entry" class="{{entry?.name}} {{entry?.movie}}"></app-editor>
+          </div>
+          <h3><span class="bold">Birthdate:</span> {{entry?.birthdate}}</h3>
+          <h3><span class="bold">First Appearance:</span> {{entry?.firstAppearance}}</h3>
+          <h3><span class="bold">Last Appearance:</span> {{entry?.lastAppearance}}</h3>
+          <h3><span class="bold">Portrayed By:</span> {{entry?.portrayedBy}}</h3>
+          <h3><span class="bold">House:</span> {{entry?.house}}</h3>
+          <h3><span class="bold">Family:</span> {{entry?.family}}</h3>
+          <h3><span class="bold">Love Interest:</span> {{entry?.loveInterest}}</h3>
+          <h3><span class="bold">Summary:</span> {{entry?.movieSpecificSummary}}</h3>
+          <h3><span class="bold">Spoiler Summary:</span> {{entry?.movieSpecificSpoilerSummary}}</h3>
+          <br>
+          <br>
+        </div>
+        <br>
+        <br>
+      </div>
 
-<div *ngFor="let character of characters | async">
-  <h1>Character:  {{character.$key}}</h1>
-  <div *ngFor="let entry of character.charMovies?.slice(1)">
-    <h2>Movie Number: {{entry?.movie}}</h2>
-    <button (click)="toggle()" type="button" name="button" class="{{entry?.name}} {{entry?.movie}}">Show/Hide Edit Form</button>
-    <div *ngIf="show">
-      <app-editor [selectedCharacter]="entry" class="{{entry?.name}} {{entry?.movie}}"></app-editor>
     </div>
-    <h3>Birthdate: {{entry?.birthdate}}</h3>
-    <h3>First Appearance: {{entry?.firstAppearance}}</h3>
-    <h3>Last Appearance: {{entry?.lastAppearance}}</h3>
-    <h3>Portrayed By: {{entry?.portrayedBy}}</h3>
-    <h3>House: {{entry?.house}}</h3>
-    <h3>Family: {{entry?.family}}</h3>
-    <h3>Love Interest: {{entry?.loveInterest}}</h3>
-    <h3>Summary: {{entry?.movieSpecificSummary}}</h3>
-    <h3>Spoiler Summary: {{entry?.movieSpecificSpoilerSummary}}</h3>
-    <br>
-    <br>
   </div>
-  <br>
-  <br>
-
 </div>
