@@ -1,13 +1,15 @@
 <div class="container-bg">
   <div class="container">
     <h2 id="title">Admin</h2>
-
     <div *ngFor="let character of characters | async">
       <div class="character-card">
         <h1>Character:  {{character.$key}}</h1>
         <div *ngFor="let entry of character.charMovies?.slice(1)">
           <h2>Movie Number: {{entry?.movie}}</h2>
-          <h3><span class="bold">Name:</span> {{entry?.name}}</h3>
+          <button (click)="toggle()" type="button" name="button" class="{{entry?.name}} {{entry?.movie}}">Show/Hide Edit Form</button>
+          <div *ngIf="show">
+            <app-editor [selectedCharacter]="entry" class="{{entry?.name}} {{entry?.movie}}"></app-editor>
+          </div>
           <h3><span class="bold">Birthdate:</span> {{entry?.birthdate}}</h3>
           <h3><span class="bold">First Appearance:</span> {{entry?.firstAppearance}}</h3>
           <h3><span class="bold">Last Appearance:</span> {{entry?.lastAppearance}}</h3>
@@ -17,7 +19,6 @@
           <h3><span class="bold">Love Interest:</span> {{entry?.loveInterest}}</h3>
           <h3><span class="bold">Summary:</span> {{entry?.movieSpecificSummary}}</h3>
           <h3><span class="bold">Spoiler Summary:</span> {{entry?.movieSpecificSpoilerSummary}}</h3>
-          <h3><span class="bold">Photo URL:</span> {{entry?.photo}}</h3>
           <br>
           <br>
         </div>
