@@ -11,6 +11,7 @@
 
 .navbar {
   display: flex;
+  position: relative;
   @include topBars;
   flex-direction: row;
   align-items: center;
@@ -58,7 +59,6 @@
       outline: none;
       border-bottom: 1px solid white;
       width: 20vw;
-      z-index: 1000;
     }
   }
 }

@@ -71,11 +71,36 @@ h3 {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  width: 31%;
+  justify-content: center;
+  width: 40%;
+  margin-top: 25px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 3%;
+  background-color: $darkBlue;
+  padding: 1%;
+  border-radius: 8px;
+  color: white;
+  border: 2px solid $blue;
+  p {
+    margin-right: 15px;
+  }
+}
+
+select {
+  height: 35px;
+  width: 60%;
+  text-align-last: center;
+  background-color: $blue;
+  color: white;
+  border: 0;
+  font: {
+    family: 'Dosis', sans-serif;
+    size: 16px;
+  }
+  &:focus {
+    outline: none;
+  }
 }
 
 button {
