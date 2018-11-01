@@ -49,6 +49,32 @@ margin-right: 2%;
   flex-direction: column;
 }
 
+button {
+  background-color: $yellow;
+  width: 30%;
+  height: 40px;
+  border: none;
+  margin: {
+    left: auto;
+    right: auto;
+    top: 15px;
+    bottom: 15px;
+  }
+  transition: all 0.3s cubic-bezier(0,0,.20,0.6);
+  border-radius: 5px;
+  font: {
+    family: 'Dosis', sans-serif;
+    size: 16px;
+    weight: bold;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: darken($yellow, 20%);
+  }
+}
+
 .profile {
   width: 27%;
   img {
