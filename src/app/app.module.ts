@@ -14,6 +14,7 @@ import { CharactersComponent } from './characters/characters.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AdminComponent } from './admin/admin.component';
+import { EditorComponent } from './editor/editor.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -30,7 +31,8 @@ export const firebaseConfig = {
     WelcomeComponent,
     NavbarComponent,
     MoviePipe,
-    AdminComponent
+    AdminComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,
