@@ -21,6 +21,17 @@ body {
   // margin-right: auto;
 }
 
+* {
+  &::-moz-selection {
+    background-color: $darkBlue;
+    color: white;
+  }
+  &::selection {
+    background-color: $darkBlue;
+    color: white;
+  }
+}
+
 app-navbar {
   width: 100%;
   display: flex;
