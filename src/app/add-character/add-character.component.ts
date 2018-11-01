@@ -21,7 +21,7 @@ submitForm(characterName: string, characterBirthdate: string, characterFirstAppe
 
   constructor(private wikiService: WikiService, private route: Router) { }
 
-  
+
   ngOnInit() {
   }
 
