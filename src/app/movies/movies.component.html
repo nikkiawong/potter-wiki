@@ -24,7 +24,7 @@
         <p>{{paragraph}}</p>
       </div>
       <button (click)="toggle()" type="button" name="button">Spoilers On/Off</button>
-      <h4>Movie Specific Spoiler Summary</h4>
+      <h4 *ngIf="show">Movie Specific Spoiler Summary</h4>
       <div *ngFor="let paragraph of movieToShow?.spoilerSummary">
         <div *ngIf="show">
           <p>{{paragraph}}</p>
@@ -39,5 +39,10 @@
     <p><span class="bold">Director:</span> {{movieToShow?.director}}</p>
     <p><span class="bold">Length:</span> {{movieToShow?.length}}</p>
     <p><span class="bold">Website:</span> {{movieToShow?.link}}</p>
+    <div>
+      <div *ngFor="let pic of movieToShow?.photos">
+        <img *ngIf="show" src="{{pic}}">
+      </div>
+    </div>
   </div>
 </div>
