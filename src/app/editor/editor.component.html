@@ -1,0 +1,32 @@
+<div class="edit">
+  <h4>Edit Character</h4>
+  
+  <label>Update Character's Birthdate: </label>
+  <input [(ngModel)]="selectedCharacter.birthdate">
+
+  <label>Update Character's First Appearance: </label>
+  <input [(ngModel)]="selectedCharacter.firstAppearance">
+
+  <label>Update Character's Last Appearance: </label>
+  <input [(ngModel)]="selectedCharacter.lastAppearance">
+
+  <label>Update Who Portrayed Character: </label>
+  <input [(ngModel)]="selectedCharacter.portrayedBy">
+
+  <label>Update Character's House: </label>
+  <input [(ngModel)]="selectedCharacter.house">
+
+  <label>Update Character's Family: </label>
+  <input [(ngModel)]="selectedCharacter.family">
+
+  <label>Update Character's Love Interest: </label>
+  <input [(ngModel)]="selectedCharacter.loveInterest">
+
+  <label>Update Character's Summary: </label>
+  <input [(ngModel)]="selectedCharacter.movieSpecificSummary">
+
+  <label>Update Character's Spoiler Summary: </label>
+  <input [(ngModel)]="selectedCharacter.movieSpecificSpoilerSummary">
+
+  <button (click)="beginUpdatingCharacter(selectedCharacter)">Submit</button>
+</div>

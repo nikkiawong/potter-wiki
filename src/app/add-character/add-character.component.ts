@@ -20,12 +20,8 @@ submitForm(characterName: string, characterBirthdate: string, characterFirstAppe
 }
 
   constructor(private wikiService: WikiService, private route: Router) { }
-  public show: boolean = false;
 
-  reloadRoute() {
-    this.show
-  }
-
+  
   ngOnInit() {
   }
 

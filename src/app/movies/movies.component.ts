@@ -20,6 +20,8 @@ export class MoviesComponent implements OnInit {
   movieKey: string;
   movieToShow;
 
+  public show:boolean = false;
+
   ngOnInit() {
     this.movies = this.database.getMovies();
     this.movies.subscribe(res => console.log(res));
@@ -31,5 +33,10 @@ export class MoviesComponent implements OnInit {
      this.movieToShow = dataIn;
      console.log(this.movieToShow);
    })
+   this.show = false;
  }
+ 
+  toggle() {
+   this.show = !this.show;
+  }
 }

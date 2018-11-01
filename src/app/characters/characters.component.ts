@@ -66,5 +66,4 @@ export class CharactersComponent implements OnInit {
   toggle() {
     this.show = !this.show;
   }
-
 }

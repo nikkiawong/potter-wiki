@@ -6,41 +6,57 @@
   left: 0;
   width: 100%;
   max-width: $contentWidth;
-  height: 90px;
+  height: 120px;
 }
 
 .navbar {
   display: flex;
   position: relative;
   @include topBars;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 70px;
+    height: 120px;
+  }
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  img {
+    height: 130px;
   }
 }
 
 .search {
   display: flex;
-  position: relative;
   z-index: 999;
   flex-direction: row-reverse;
   align-items: center;
-  @include topBars;
-  input {
+  input[type="text"] {
     align-items: center;
     margin-right: 30px;
-    justify-content: center;
     right: 30px;
     height: 30px;
-    width: 40px;
+    width: 50px;
+    transition: all 0.3s cubic-bezier(0,0,.20,0.6);
+    border: 0;
+    outline: none;
+    background-color : $darkBlue;
+    font-size: 16px;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Dosis', sans-serif;
+    &::placeholder {
+      color: white;
+    }
     &:focus {
       outline: none;
-      width: 30vw;
-      z-index: 1000;
+      border-bottom: 1px solid white;
+      width: 20vw;
     }
   }
+  @include topBars;
 }

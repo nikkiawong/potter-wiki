@@ -13,7 +13,12 @@ import { MoviesComponent } from './movies/movies.component';
 import { CharactersComponent } from './characters/characters.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { NavbarComponent } from './navbar/navbar.component';
+<<<<<<< HEAD
 import { AddCharacterComponent } from './add-character/add-character.component';
+=======
+import { AdminComponent } from './admin/admin.component';
+import { EditorComponent } from './editor/editor.component';
+>>>>>>> master
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -30,7 +35,12 @@ export const firebaseConfig = {
     WelcomeComponent,
     NavbarComponent,
     MoviePipe,
+<<<<<<< HEAD
     AddCharacterComponent
+=======
+    AdminComponent,
+    EditorComponent
+>>>>>>> master
   ],
   imports: [
     BrowserModule,
