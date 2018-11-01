@@ -16,6 +16,10 @@ const appRoutes: Routes = [
   {
     path: 'movies/:$key',
     component: MoviesComponent
+  },
+  {
+    path: 'welcome',
+    component: WelcomeComponent
   }
 ];
 

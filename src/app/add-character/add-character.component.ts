@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { WikiService } from '../wiki.service';
 import { Character } from '../models/character.model';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-character',
@@ -17,7 +19,12 @@ submitForm(characterName: string, characterBirthdate: string, characterFirstAppe
   this.wikiService.addCharacter(newCharacter);
 }
 
-  constructor(private wikiService: WikiService) { }
+  constructor(private wikiService: WikiService, private route: Router) { }
+  public show: boolean = false;
+
+  reloadRoute() {
+    this.show
+  }
 
   ngOnInit() {
   }
