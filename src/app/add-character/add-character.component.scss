@@ -1,0 +1,26 @@
+
+.background {
+  background-color: #505168;
+  opacity: .5;
+  z-index: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 75vw;
+  height: auto;
+  padding: 5vw;
+  color: black;
+  z-index: 1;
+
+}
+input {
+  background-color: #E2E5D3;
+}
+button {
+  align-self: center;
+  margin-top: 3vw;
+  width: 40%;
+  height: 3em;
+}

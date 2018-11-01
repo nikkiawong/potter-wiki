@@ -62,6 +62,10 @@ export class WikiService {
   getMovies() {
     return this.movies;
   }
+  addCharacter(newCharacter: Character) {
+    // this.characters.push(newCharacter);
+  this.database.object(`/characters/${newCharacter.name}/charMovies/${newCharacter.movie}/`).set(newCharacter);
+  }
 
   updateCharacter(localUpdatedCharacter){
     const charKey = localUpdatedCharacter.name.toLowerCase().split(' ').join('_');

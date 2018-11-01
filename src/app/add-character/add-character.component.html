@@ -1,0 +1,43 @@
+<div>
+<div class="background">
+    <div class="container">
+      <h2>Add Character</h2>
+      <label>Character Name:</label>
+      <input #newCharacterName>
+      <br>
+      <label>Birthdate:</label>
+      <input #newCharacterBirthdate>
+      <br>
+      <label>First Appearance:</label>
+      <input #newCharacterFirstAppearance>
+      <br>
+      <label>Last Appearance:</label>
+      <input #newCharacterLastAppearance>
+      <br>
+      <label>Portrayed By:</label>
+      <input #newCharacterPortryedBy>
+      <br>
+      <label>House:</label>
+      <input #newCharacterHouse>
+      <br>
+      <label>Family:</label>
+      <input #newCharacterFamily>
+      <br>
+      <label>Love Interest:</label>
+      <input #newCharacterLoveInterest>
+      <br>
+      <label>Movie:</label>
+      <input #newCharacterMovie>
+      <br>
+      <label>Summary:</label>
+      <textarea #newCharacterMovieSpecificSummary></textarea>
+      <br>
+      <label>Spoiler Summary:</label>
+      <textarea #newCharacterMovieSpecificSpoilerSummary></textarea>
+      <br>
+      <label>Photos:</label>
+      <input #newCharacterPhoto>
+      <button (click)="submitForm(newCharacterName.value, newCharacterBirthdate.value, newCharacterFirstAppearance.value, newCharacterLastAppearance.value, newCharacterPortryedBy.value, newCharacterHouse.value, newCharacterFamily.value, newCharacterLoveInterest.value, newCharacterMovie.value, newCharacterMovieSpecificSummary.value, newCharacterMovieSpecificSpoilerSummary.value, newCharacterPhoto.value); newCharacterName.value=''; newCharacterBirthdate.value=''; newCharacterFirstAppearance.value=''; newCharacterLastAppearance.value=''; newCharacterPortryedBy.value=''; newCharacterHouse.value=''; newCharacterFamily.value=''; newCharacterLoveInterest.value=''; newCharacterMovie.value=''; newCharacterMovieSpecificSummary.value=''; newCharacterMovieSpecificSpoilerSummary.value='';newCharacterPhoto.value=''; "><a routerLink='welcome'>Add</a></button>
+    </div>
+  </div>
+</div>

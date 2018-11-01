@@ -19,6 +19,10 @@ const appRoutes: Routes = [
     component: MoviesComponent
   },
   {
+    path: 'welcome',
+    component: WelcomeComponent
+  },
+  {
     path: 'admin',
     component: AdminComponent
   }
