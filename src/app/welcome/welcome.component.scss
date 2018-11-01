@@ -1,11 +1,11 @@
 .welcome-background {
+  position: relative;
   background-image: url(../../assets/img/hogwarts-fog.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   height: 100vh;
 }
-
 .welcome-body {
   padding-top: 70px;
 }

@@ -10,7 +10,6 @@
         <p>{{paragraph}}</p>
       </div>
       <button (click)="toggle()" type="button" name="button">Spoilers On/Off</button>
-      <h4 *ngIf="show">Movie Specific Spoiler Summary</h4>
       <div *ngFor="let paragraph of movieToShow?.spoilerSummary">
         <div *ngIf="show">
           <p>{{paragraph}}</p>
