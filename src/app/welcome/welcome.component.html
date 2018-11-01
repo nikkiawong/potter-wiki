@@ -7,3 +7,7 @@
 <div *ngFor="let character of characters | async"  (click)="goToCharacter(character)">
   <p>{{character.$key}}</p>
 </div>
+<div class="adminButton">
+  <a routerLink="admin">see admin</a>
+
+</div>

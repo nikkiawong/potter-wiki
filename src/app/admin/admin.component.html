@@ -1,0 +1,17 @@
+<h2>Admin</h2>
+
+<div *ngFor="let character of characters | async">
+    <h3>Key:{{charcter.$key}}</h3>
+    <h3>{{character.name}}</h3>
+    <h3>birthdate:{{character.birthdate}}</h3>
+    <h3>{{character.firstAppearance}}</h3>
+    <h3>{{character.lastAppearance}}</h3>
+    <h3>{{character.portrayedBy}}</h3>
+    <h3>{{character.house}}</h3>
+    <h3>{{character.family}}</h3>
+    <h3>{{character.loveInterest}}</h3>
+    <h3>{{character.movie}}</h3>
+    <h3>{{character.movieSpecificSummary}}</h3>
+    <h3>{{character.movieSpecificSpoilerSummary}}</h3>
+    <h3>{{character.photo}}</h3>
+  </div>
