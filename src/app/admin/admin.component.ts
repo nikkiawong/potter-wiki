@@ -16,12 +16,14 @@ import { FirebaseListObservable } from 'angularfire2/database';
 export class AdminComponent implements OnInit {
   characters: FirebaseListObservable<any[]>;
   movies: FirebaseListObservable<any[]>;
-  // currentRoute: string = this.router.url;
+  currentRoute: string = this.router.url;
   // characterToShow;
 
   constructor(private router: Router, private database: WikiService) { }
   // characterKey: string;
   // characterToShow;
+
+  public show:boolean = false;
 
   ngOnInit() {
     this.characters = this.database.getCharacters();
@@ -29,8 +31,12 @@ export class AdminComponent implements OnInit {
     this.characters.subscribe(res => console.log(res[0]));
     // this.characters.subscribe(res => console.log(res));
 
+    this.show = false;
   }
 
+  toggle() {
+   this.show = !this.show;
+  }
   // this.charMovieId = '1';
   //
   // this.wikiService.getCharMovieById(this.characterKey, this.charMovieId).subscribe(dataLastEmittedFromObserver => {
