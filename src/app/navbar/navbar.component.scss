@@ -6,26 +6,31 @@
   left: 0;
   width: 100%;
   max-width: $contentWidth;
-  height: 90px;
+  height: 120px;
 }
 
 .navbar {
   display: flex;
-  position: relative;
   @include topBars;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 70px;
+    height: 120px;
+  }
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  img {
+    height: 130px;
   }
 }
 
 .search {
   display: flex;
-  position: relative;
   z-index: 999;
   flex-direction: row-reverse;
   align-items: center;
@@ -35,7 +40,8 @@
     background-color : $darkBlue;
     font-size: 16px;
     color: white;
-    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
+    font-family: 'Dosis', sans-serif;
     &::placeholder {
       color: white;
     }
@@ -44,7 +50,6 @@
   input {
     align-items: center;
     margin-right: 30px;
-    justify-content: center;
     right: 30px;
     height: 30px;
     width: 50px;
@@ -52,7 +57,7 @@
     &:focus {
       outline: none;
       border-bottom: 1px solid white;
-      width: 30vw;
+      width: 20vw;
       z-index: 1000;
     }
   }
