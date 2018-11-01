@@ -63,4 +63,21 @@ export class WikiService {
     return this.movies;
   }
 
+  updateCharacter(localUpdatedCharacter){
+    const charKey = localUpdatedCharacter.name.toLowerCase().split(' ').join('_');
+    console.log(charKey);
+    let characterEntryInFirebase = this.getCharMovieById(charKey, localUpdatedCharacter.movie);
+    characterEntryInFirebase.update({
+    birthdate: localUpdatedCharacter.birthdate,
+    firstAppearance: localUpdatedCharacter.firstAppearance,
+    lastAppearance: localUpdatedCharacter.lastAppearance,
+    portrayedBy: localUpdatedCharacter.portrayedBy,
+    house: localUpdatedCharacter.house,
+    family: localUpdatedCharacter.family,
+    loveInterest: localUpdatedCharacter.loveInterest,
+    movieSpecificSummary: localUpdatedCharacter.movieSpecificSummary,
+    movieSpecificSpoilerSummary: localUpdatedCharacter.movieSpecificSpoilerSummary
+  });
+
+  }
 }
