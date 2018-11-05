@@ -12,23 +12,24 @@ import { Router } from '@angular/router';
 export class WelcomeComponent implements OnInit {
   characters: FirebaseListObservable<any[]>;
   movies: FirebaseListObservable<any[]>;
-
+  
   constructor(private router: Router, private database: WikiService) { }
-
+  
   ngOnInit() {
     this.characters = this.database.getCharacters();
     this.movies = this.database.getMovies();
   }
-
+  
   goToCharacter(character) {
     const url = character.$key.toLowerCase().split(" ").join('_');
     this.router.navigate(['characters', url])
   }
-
+  
   goToMovie(movie) {
     const url = movie.$key.toLowerCase().split(" ").join('_');
     this.router.navigate(['movies', url])
   }
   public addChar = false;
-
+  
 }
+

@@ -4,8 +4,6 @@ import { FirebaseListObservable } from 'angularfire2/database';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 
-
-
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
@@ -13,30 +11,30 @@ import { Location } from '@angular/common';
   providers: [WikiService]
 })
 export class MoviesComponent implements OnInit {
-
   movies: FirebaseListObservable<any[]>;
-
+  
   constructor(private route: ActivatedRoute, private location: Location, private database: WikiService) { }
   movieKey: string;
   movieToShow;
-
+  
   public show:boolean = false;
-
+  
   ngOnInit() {
     this.movies = this.database.getMovies();
     this.movies.subscribe(res => console.log(res));
-
+    
     this.route.params.forEach((urlParameters) => {
       this.movieKey = urlParameters['$key'];
     });
     this.database.getMovieByKey(this.movieKey).subscribe(dataIn => {
-     this.movieToShow = dataIn;
-     console.log(this.movieToShow);
-   })
-   this.show = false;
- }
- 
+      this.movieToShow = dataIn;
+      console.log(this.movieToShow);
+    })
+    this.show = false;
+  }
+  
   toggle() {
-   this.show = !this.show;
+    this.show = !this.show;
   }
 }
+

@@ -7,14 +7,14 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 export class WikiService {
   characters: FirebaseListObservable<any[]>;
   movies: FirebaseListObservable<any[]>;
-
+  
   constructor(private database: AngularFireDatabase) {
     this.characters = database.list('characters');
     this.characters.subscribe(res => console.log(res));
     this.movies = database.list('movies');
     this.movies.subscribe(res => console.log(res));
   }
-
+  
   getMovieByKey(movieKey: string) {
     const keyArray = movieKey.split('_');
     for (let i = 0; i < keyArray.length; i++) {
@@ -27,7 +27,7 @@ export class WikiService {
     const key = keyArray.join(' ');
     return this.database.object('movies/' + key);
   }
-
+  
   getCharacterByKey(characterKey: string) {
     const keyArray = characterKey.split('_');
     for (let i = 0; i < keyArray.length; i++) {
@@ -40,7 +40,7 @@ export class WikiService {
     const key = keyArray.join(' ');
     return this.database.object('characters/' + key);
   }
-
+  
   getCharMovieById(characterKey: string, charMovieId: string) {
     const keyArray = characterKey.split('_');
     for (let i = 0; i < keyArray.length; i++) {
@@ -54,34 +54,35 @@ export class WikiService {
     console.log('characters/' + key + '/' + 'charMovies/' + charMovieId);
     return this.database.object('/characters/' + key + '/charMovies/' + charMovieId);
   }
-
+  
   getCharacters() {
     return this.characters;
   }
-
+  
   getMovies() {
     return this.movies;
   }
   addCharacter(newCharacter: Character) {
     // this.characters.push(newCharacter);
-  this.database.object(`/characters/${newCharacter.name}/charMovies/${newCharacter.movie}/`).set(newCharacter);
+    this.database.object(`/characters/${newCharacter.name}/charMovies/${newCharacter.movie}/`).set(newCharacter);
   }
-
+  
   updateCharacter(localUpdatedCharacter){
     const charKey = localUpdatedCharacter.name.toLowerCase().split(' ').join('_');
     console.log(charKey);
     let characterEntryInFirebase = this.getCharMovieById(charKey, localUpdatedCharacter.movie);
     characterEntryInFirebase.update({
-    birthdate: localUpdatedCharacter.birthdate,
-    firstAppearance: localUpdatedCharacter.firstAppearance,
-    lastAppearance: localUpdatedCharacter.lastAppearance,
-    portrayedBy: localUpdatedCharacter.portrayedBy,
-    house: localUpdatedCharacter.house,
-    family: localUpdatedCharacter.family,
-    loveInterest: localUpdatedCharacter.loveInterest,
-    movieSpecificSummary: localUpdatedCharacter.movieSpecificSummary,
-    movieSpecificSpoilerSummary: localUpdatedCharacter.movieSpecificSpoilerSummary
-  });
-
+      birthdate: localUpdatedCharacter.birthdate,
+      firstAppearance: localUpdatedCharacter.firstAppearance,
+      lastAppearance: localUpdatedCharacter.lastAppearance,
+      portrayedBy: localUpdatedCharacter.portrayedBy,
+      house: localUpdatedCharacter.house,
+      family: localUpdatedCharacter.family,
+      loveInterest: localUpdatedCharacter.loveInterest,
+      movieSpecificSummary: localUpdatedCharacter.movieSpecificSummary,
+      movieSpecificSpoilerSummary: localUpdatedCharacter.movieSpecificSpoilerSummary
+    });
+    
   }
 }
+
