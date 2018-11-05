@@ -9,14 +9,15 @@ import { WikiService } from '../wiki.service';
 })
 export class EditorComponent implements OnInit {
   @Input() selectedCharacter;
-
+  
   constructor(private database: WikiService) { }
-
+  
   ngOnInit() {
   }
-
+  
   beginUpdatingCharacter(characterToUpdate){
     this.database.updateCharacter(characterToUpdate);
   }
-
+  
 }
+

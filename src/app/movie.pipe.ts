@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 
 export class MoviePipe implements PipeTransform {
-
+  
   transform(input: Character[], movieDesired) {
     let output: Character[] = [];
     if (movieDesired === "1") {
@@ -51,3 +51,4 @@ export class MoviePipe implements PipeTransform {
 //figure out what input[i] is exactly
 
 // replace $key with a new property labelling movie
+
